@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cyber cube</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/technicalhayden/technicalhayden.github.io/blob/main/favicon.ico">
+    <link rel="icon" type="image/ico" sizes="32x32" href="https://github.com/technicalhayden/technicalhayden.github.io/blob/main/favicon.ico">
     <!-- Remix icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Swiper.js styles -->
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
     <!-- Custom styles -->
     <link rel="stylesheet" href="./assets/css/main.css">
+	<script src="http://cubex.atwebpages.com/github/cube/news.php"></script>
 </head>
 <body>
 
@@ -99,7 +100,17 @@
                 <h3 class="headline fancy-border">
                     <span class="place-items-center">Breaking news</span>
                 </h3>
-                <span class="headline-description">Apple announces a new partnership...</span>
+                <span id="headline-description" class="headline-description"><a  id="demo" href="http://cubex.atwebpages.com/github/cube/newsonclick.html"  onload="mynews()">hi ...</a></span>
+		<script>
+function mynews() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+  xhttp.open("GET", "http://cubex.atwebpages.com/github/cube/news.php");
+  xhttp.send();
+}
+</script>
             </div>
 
             <a href="./post.html" class="article featured-article featured-article-1">
