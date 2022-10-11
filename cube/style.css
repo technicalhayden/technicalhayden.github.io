@@ -15,7 +15,7 @@ table{border-collapse:collapse;border-spacing:0;}
 
 /** Background image is set on html element **/
 html{
-	background: url(bg-image.jpg);
+	background: url(bg.png);
 	margin: 0;
 	background-position: center;
 	background-size: cover;
@@ -26,7 +26,7 @@ html{
 /**** We put pattern mask in body ***/
 body{
 	margin:0;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAICAYAAAAx8TU7AAAAG0lEQVQIW2NkYGB4BsQogBGXYBo2lVgFqW0mAAMyBTnkxKBjAAAAAElFTkSuQmCC) repeat;
+	background: url(https://technicalhayden.github.io/cube/bg.png) repeat;
 	text-align: center;
 	text-transform: uppercase;
 	background-position: center;
