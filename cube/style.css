@@ -15,7 +15,7 @@ table{border-collapse:collapse;border-spacing:0;}
 
 /** Background image is set on html element **/
 html{
-	background: url(../images/bg-image.jpg);
+	background: url(bg-image.jpg);
 	margin: 0;
 	background-position: center;
 	background-size: cover;
