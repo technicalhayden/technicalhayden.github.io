@@ -2,12 +2,92 @@
 <html lang="en">
 
 <head>
+  <style>
+ .skills-toggle {
+  background: var(--bg-secondary);
+  position: relative;
+  width: max-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.skills-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 93px;
+  background: var(--raw-seinna);
+  border-radius: 100px;
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.skills-toggle.active::before {
+  left: 98px;
+  width: 94px;
+}
+
+.toggle-btn {
+  color: var(--color-primary);
+  font-family: var(--ff-poppins);
+  padding: 5px 25px;
+  transition: var(--transition-1);
+}
+
+.toggle-btn.active { color: var(--white); }
+
+.skills-box.active .skills-list,
+.skills-box .tools-list { display: none; }
+
+.skills-box .skills-list,
+.skills-box.active .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+
+}
+
+.skill-card {
+  position: relative;
+  background: var(--bg-secondary);
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-1);
+  cursor: help;
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+
+  </style>
  <!-- 
     - custom css link
-  -->
-  <link rel="stylesheet" href="https://codewithsadee.github.io/jack-portfolio/assets/css/style.css">
-
-  <!-- 
+ <!-- 
     - google font link
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -272,6 +352,7 @@
           </p>
 
           <p align="center"> <h2 class="h2 article-title">Languages and Tools</h2>
+          
             <div class="skills-box" data-skills-box>
 
               <ul class="skills-list">
@@ -318,7 +399,7 @@
     
                 <li>
                   <div class="skill-card">
-                    <div class="tooltip">jQuery</div>
+                    <div class="tooltip">php</div>
     
                     <div class="card-icon">
                       <img src="https://technicalhayden.github.io/images/php-original.png" width="50" height="50" alt="php logo">
@@ -328,10 +409,10 @@
     
                 <li>
                   <div class="skill-card">
-                    <div class="tooltip">Basah</div>
+                    <div class="tooltip">Bash</div>
     
                     <div class="card-icon">
-                      <img src="https://camo.githubusercontent.com/bbb327d6ba7708520eaafd13396fed64d73bf5df5c4cdd0ba03cf0843f7a9340/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f676e755f626173682f676e755f626173682d69636f6e2e737667" alt="Bash logo">
+                      <img src="https://codewithsadee.github.io/jack-portfolio/assets/images/command.png" alt="Bash logo">
                     </div>
                   </div>
                 </li>
@@ -341,7 +422,7 @@
                     <div class="tooltip">Java</div>
     
                     <div class="card-icon">
-                      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java logo">
+                      <img src="https://technicalhayden.github.io/images/java-original.png" width="50" height="50" alt="Java logo">
                     </div>
                   </div>
                 </li>
@@ -351,7 +432,7 @@
                     <div class="tooltip">Node js</div>
     
                     <div class="card-icon">
-                      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="Node js logo">
+                      <img src="https://technicalhayden.github.io/images/nodejs-original-wordmark.png"  width="50" height="50"  alt="Node js logo">
                     </div>
                   </div>
                 </li>
@@ -381,7 +462,7 @@
                     <div class="tooltip">Docker</div>
     
                     <div class="card-icon">
-                      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker logo">
+                      <img src="https://technicalhayden.github.io/images/docker-original-wordmark.png"  width="50" height="50" alt="Docker logo">
                     </div>
                   </div>
                 </li>
@@ -391,142 +472,18 @@
                     <div class="tooltip">Google cloud</div>
     
                     <div class="card-icon">
-                      <img src="https://camo.githubusercontent.com/582944f6627732531ce1a2e20ad43538d1896e16a5f159ea28fd137dbb8e798a/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f676f6f676c655f636c6f75642f676f6f676c655f636c6f75642d69636f6e2e737667" alt="Google cloud logo">
+                      <img src="https://camo.githubusercontent.com/582944f6627732531ce1a2e20ad43538d1896e16a5f159ea28fd137dbb8e798a/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f676f6f676c655f636c6f75642f676f6f676c655f636c6f75642d69636f6e2e737667"   width="50" height="50" alt="Google cloud logo">
                     </div>
                   </div>
                 </li>
     
               </ul>
     
-              <ul class="tools-list">
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Ajax</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/ajax.png" alt="Ajax logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Gulp</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/gulp.png" alt="Gulp logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Webpack</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/webpack.png" alt="Webpack logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Git</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/git.png" alt="Git logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Npm</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/npm.png" alt="Npm logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Command Line</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/command.png" alt="Command Line logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">VS Code</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/vs-code.png" alt="VS Code logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Trello</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/trello.png" alt="Trello logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">ClickUp</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/clickup.png" alt="ClickUp logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Slack</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/slack.png" alt="Slack logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Photoshop</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/photoshop.png" alt="Photoshop logo">
-                    </div>
-                  </div>
-                </li>
-    
-                <li>
-                  <div class="skill-card">
-                    <div class="tooltip">Adobe XD</div>
-    
-                    <div class="card-icon">
-                      <img src="./assets/images/adobe-xd.png" alt="Adobe XD logo">
-                    </div>
-                  </div>
-                </li>
-    
-              </ul>
-    
-            </div>
+         
             
           </p>
         </section>
-
+       
 
         <!--
           - service
@@ -1412,7 +1369,7 @@
   <!--
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+ 
   <script src="https://codewithsadee.github.io/jack-portfolio/assets/js/script.js"></script>
   <!--
     - ionicon link
